@@ -18,8 +18,8 @@ function openEditFormWithH() {
       dialogProp,
       {
         default: () => h(CreateForm, {
-          'onUpdate:modelValue'() {
-            alert('送出資料');
+          'onUpdate:modelValue'(data) {
+            alert(`送出資料: ${data.name}`);
             dialog.hide();
           },
           onCancel() {
@@ -33,9 +33,8 @@ function openEditFormWithH() {
 
 function openEditForm() {
   const dialog = openUsingDialog(CreateForm, {
-    'onUpdate:modelValue'() {
-      alert('送出資料');
-
+    'onUpdate:modelValue'(data) {
+      alert(`送出資料: ${data.name}`);
       dialog.hide();
     },
     onCancel() {
@@ -46,8 +45,8 @@ function openEditForm() {
 
 function openEditFormBottom() {
   const dialog = openUsingDialog(CreateForm, {
-    'onUpdate:modelValue'() {
-      alert('送出資料');
+    'onUpdate:modelValue'(data) {
+      alert(`送出資料: ${data.name}`);
       dialog.hide();
     },
     onCancel() {
