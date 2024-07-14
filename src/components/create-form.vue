@@ -12,12 +12,19 @@
           outlined
         ></q-input>
 
-        <q-btn
-          label="送出"
-          type="submit"
-          color="teal"
-          class="mt-2 fit"
-        />
+        <div class="flex gap-2 mt-2">
+          <q-btn
+            label="取消"
+            @click="emit('cancel')"
+          />
+
+          <q-btn
+            label="送出"
+            type="submit"
+            class="flex-1"
+            color="teal"
+          />
+        </div>
       </q-card-section>
     </q-form>
   </q-card>
@@ -41,6 +48,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const emit = defineEmits<{
+  (e: 'cancel'): void;
   (e: 'update:modelValue', value: NonNullable<Props['modelValue']>): void;
 }>();
 
