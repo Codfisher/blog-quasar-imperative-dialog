@@ -9,6 +9,7 @@ import { h } from 'vue';
 
 const $q = useQuasar();
 
+/** 直接使用 h function */
 function openEditFormWithH() {
   const dialogProp = {};
 
@@ -31,6 +32,7 @@ function openEditFormWithH() {
   });
 }
 
+/** 使用 openUsingDialog 簡化 */
 function openEditForm() {
   const dialog = openUsingDialog(CreateForm, {
     'onUpdate:modelValue'(data) {
@@ -43,6 +45,7 @@ function openEditForm() {
   });
 }
 
+/** 加入更多互動 */
 function openEditFormBottom() {
   const dialog = openUsingDialog(CreateForm, {
     'onUpdate:modelValue'(data) {
