@@ -69,6 +69,13 @@ function openEditFormBottom() {
     position: 'bottom',
     // 不允許點擊外部關閉
     persistent: true,
+    onShake() {
+      $q.notify({
+        type: 'negative',
+        message: '請輸入資料',
+        position: 'top',
+      });
+    },
   });
 }
 </script>
