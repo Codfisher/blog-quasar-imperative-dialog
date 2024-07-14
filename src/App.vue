@@ -13,17 +13,21 @@ function openEditFormWithH() {
   const dialogProp = {};
 
   const dialog = $q.dialog({
-    component: h(QDialog, dialogProp, {
-      default: () => h(CreateForm, {
-        'onUpdate:modelValue'() {
-          alert('送出資料');
-          dialog.hide();
-        },
-        onCancel() {
-          dialog.hide();
-        }
-      })
-    })
+    component: h(
+      QDialog,
+      dialogProp,
+      {
+        default: () => h(CreateForm, {
+          'onUpdate:modelValue'() {
+            alert('送出資料');
+            dialog.hide();
+          },
+          onCancel() {
+            dialog.hide();
+          }
+        })
+      }
+    )
   });
 }
 
