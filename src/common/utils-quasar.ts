@@ -65,11 +65,11 @@ export function wrapWithDialog<Comp extends Component>(
  * });
  * ```
  */
-export function openUsingDialog<T extends Component>(
-  component: T,
-  props?: ExtractComponentProps<T>,
+export function openUsingDialog<Comp extends Component>(
+  component: Comp,
+  props?: ExtractComponentProps<Comp>,
   dialogProps?: QDialogProps,
-  slots?: ExtractComponentSlots<T>
+  slots?: ExtractComponentSlots<Comp>
 ) {
   return Dialog.create({
     component: wrapWithDialog(component, props, dialogProps, slots),
